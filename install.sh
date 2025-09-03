@@ -63,6 +63,10 @@ ensure_cmd vim vim
 ensure_cmd tmux tmux
 ensure_cmd curl curl
 ensure_cmd tree tree
+ensure_cmd fzf fzf
+ensure_cmd ripgrep ripgrep
+ensure_cmd fd-find fd-find
+ensure_cmd bat bat
 
 # --- clone repo ---
 if [ ! -d "$DOTFILES_DIR" ]; then
@@ -86,6 +90,9 @@ for file in "${FILES[@]}"; do
     echo "Linking $src -> $dest"
     ln -sfn "$src" "$dest"
 done
+
+# fdfind
+ln -s $(which fdfind) ~/.local/bin/fd
 
 # Vim plugins
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
