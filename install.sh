@@ -91,9 +91,6 @@ for file in "${FILES[@]}"; do
     ln -sfn "$src" "$dest"
 done
 
-# fdfind
-ln -s $(which fdfind) ~/.local/bin/fd
-
 # Vim plugins
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
