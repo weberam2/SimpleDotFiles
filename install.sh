@@ -44,6 +44,12 @@ setup_macos() {
     install_pkg coreutils
 }
 
+# --- ensure dependencies ---
+ensure_cmd git git
+ensure_cmd zsh zsh
+ensure_cmd vim vim
+ensure_cmd tmux tmux
+
 # --- clone repo ---
 if [ ! -d "$DOTFILES_DIR" ]; then
     echo "📦 Cloning dotfiles repo into $DOTFILES_DIR..."
@@ -60,12 +66,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
     echo "🐧 Linux detected"
 fi
-
-# --- ensure dependencies ---
-ensure_cmd git git
-ensure_cmd zsh zsh
-ensure_cmd vim vim
-ensure_cmd tmux tmux
 
 # --- symlinks ---
 for file in "${FILES[@]}"; do
