@@ -1,7 +1,7 @@
 # to change shell to zsh: chsh -s $(which zsh)
 
 #### Prompt
-# Show working dir in blue, ❯ in green, and error code in red if last cmd failed
+# Show working dir in blue, > in green, and error code in red if last cmd failed
 PS1='%F{blue}%B%~%b%f %(?..%F{red}[%?]%f )%F{green}>%f '
 
 #### Completion
