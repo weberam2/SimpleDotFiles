@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # --- config ---
-GIT_REPO="git@github.com:weberam2/SimpleDotFiles.git" 
+GIT_REPO="https://github.com/weberam2/SimpleDotFiles.git"
 DOTFILES_DIR="$HOME/.dotfiles"
 FILES=(.zshrc .vimrc .tmux.conf)
 
