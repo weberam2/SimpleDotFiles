@@ -12,7 +12,10 @@ install_pkg() {
     echo "Installing packages: ${pkgs[*]}"
 
     if command -v apt-get >/dev/null; then
-        sudo apt-get update && sudo apt-get install -y "${pkgs[@]}"
+        if command -v apt-get >/dev/null; then
+            sudo apt-get update && sudo apt-get install -y "${pkgs[@]}"
+        else
+            apt-get update && apt-get install -y "${pkgs[@]}"
     elif command -v dnf >/dev/null; then
         sudo dnf install -y "${pkgs[@]}"
     elif command -v yum >/dev/null; then
