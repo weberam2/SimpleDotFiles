@@ -62,6 +62,7 @@ ensure_cmd zsh zsh
 ensure_cmd vim vim
 ensure_cmd tmux tmux
 ensure_cmd curl curl
+ensure_cmd tree tree
 
 # --- clone repo ---
 if [ ! -d "$DOTFILES_DIR" ]; then
