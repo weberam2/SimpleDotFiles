@@ -12,10 +12,11 @@ install_pkg() {
     echo "Installing packages: ${pkgs[*]}"
 
     if command -v apt-get >/dev/null; then
-        if command -v apt-get >/dev/null; then
+        if command -v sudo >/dev/null; then
             sudo apt-get update && sudo apt-get install -y "${pkgs[@]}"
         else
             apt-get update && apt-get install -y "${pkgs[@]}"
+        fi
     elif command -v dnf >/dev/null; then
         sudo dnf install -y "${pkgs[@]}"
     elif command -v yum >/dev/null; then
@@ -47,6 +48,14 @@ setup_macos() {
     install_pkg coreutils
 }
 
+# --- detect OS ---
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo "🍏 macOS detected"
+    setup_macos
+else
+    echo "🐧 Linux detected"
+fi
+
 # --- ensure dependencies ---
 ensure_cmd git git
 ensure_cmd zsh zsh
@@ -60,14 +69,6 @@ if [ ! -d "$DOTFILES_DIR" ]; then
 else
     echo "📥 Updating dotfiles repo..."
     git -C "$DOTFILES_DIR" pull --ff-only
-fi
-
-# --- detect OS ---
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    echo "🍏 macOS detected"
-    setup_macos
-else
-    echo "🐧 Linux detected"
 fi
 
 # --- symlinks ---
