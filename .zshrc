@@ -27,6 +27,9 @@ alias rm='rm --interactive=once'
 alias mv='mv --interactive=once'
 alias cp='cp --interactive=once'
 
+alias bat='batcat'
+alias fd='fdfind'
+
 alias sz='source ~/.zshrc'
 alias q='exit'
 
@@ -73,3 +76,4 @@ extract () {
   fi
 }
 
+export PATH="$PATH:~/.local/bin"
