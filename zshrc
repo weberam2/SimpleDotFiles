@@ -33,8 +33,13 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-# Safer global aliases
-alias -g ...='../..'
+alias ll='ls -lAh'        # long, human readable, hidden
+alias lt='ls -ltrh'       # sort by time
+alias du1='du -h --max-depth=1'   # disk usage summary
+alias dfh='df -h'                  # human-readable disk free
+alias mkdirp='mkdir -p'            # no error if exists
+alias please='sudo $(fc -ln -1)'  # rerun last command with sudo
+alias path='echo -e ${PATH//:/\\n}'         # show $PATH nicely
 
 # Only define if program exists
 command -v xclip >/dev/null && alias copy='xclip -selection clipboard'
