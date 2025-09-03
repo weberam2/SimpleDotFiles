@@ -61,6 +61,7 @@ ensure_cmd git git
 ensure_cmd zsh zsh
 ensure_cmd vim vim
 ensure_cmd tmux tmux
+ensure_cmd curl curl
 
 # --- clone repo ---
 if [ ! -d "$DOTFILES_DIR" ]; then
@@ -84,6 +85,10 @@ for file in "${FILES[@]}"; do
     echo "Linking $src -> $dest"
     ln -sfn "$src" "$dest"
 done
+
+# Vim plugins
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # --- set zsh as default ---
 if command -v zsh >/dev/null && [ "$SHELL" != "$(command -v zsh)" ]; then
