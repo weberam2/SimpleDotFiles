@@ -97,3 +97,6 @@ if command -v zsh >/dev/null && [ "$SHELL" != "$(command -v zsh)" ]; then
 fi
 
 echo "✅ Dotfiles installed and environment ready!"
+
+echo "Note: you will have to type `zsh` to enter the shell"
+echo "And when you first run vim, type: `:PlugInstall`"
