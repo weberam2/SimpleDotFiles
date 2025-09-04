@@ -64,7 +64,7 @@ ensure_cmd tmux tmux
 ensure_cmd curl curl
 ensure_cmd tree tree
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-yes | ~/.fzf/install
+~/.fzf/install
 ensure_cmd ripgrep ripgrep
 ensure_cmd fd-find fd-find
 ensure_cmd bat bat
