@@ -59,6 +59,27 @@ tnoremap <Esc><Esc> <C-\><C-n>
 nnoremap <expr> <silent> k v:count == 0 ? 'gk' : 'k'
 nnoremap <expr> <silent> j v:count == 0 ? 'gj' : 'j'
 
+" Undo: keep undo history across sessions.
+set undofile
+set undodir=~/.vim/undodir
+
+" Navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Splits
+" Split window vertically (new window on the right)
+nnoremap <leader>\| :vsplit<CR>
+" Split window horizontally (new window below)
+nnoremap <leader>_ :split<CR>
+
+" Better search: use incremental search + highlight current match.
+set incsearch
+set hlsearch
+set showmatch
+
 """""""""""""""
 "" Appearance
 """""""""""""""
@@ -96,12 +117,15 @@ set autoindent autoread " autoindent, and automatically change file if it has be
 filetype plugin indent on " allow plugins
 
 call plug#begin()
-Plug 'preservim/NERDTree' " filetree explorer
-Plug 'godlygeek/tabular' " align text
-Plug 'lervag/vimtex' " Latex editing
+Plug 'tpope/vim-unimpaired' " There are mappings which are simply short normal mode aliases for commonly used ex commands. ]q is :cnext. [q is :cprevious. ]a is :next. [b is :bprevio
+Plug 'tpope/vim-surround' " surround; default is shift-s I believe
+Plug 'tpope/vim-repeat' " extends the . repeat command to plugin maps
 Plug 'tpope/vim-sleuth' " detect tabstop and shiftwidth auto
 Plug 'tpope/vim-commentary' " comment lines with gcc
 " Plug 'tpope/vim-sensible' " sensible defaults
+Plug 'preservim/NERDTree' " filetree explorer
+Plug 'godlygeek/tabular' " align text
+Plug 'lervag/vimtex' " Latex editing
 " helpful guide for key mappings:
 Plug 'liuchengxu/vim-which-key' ", { 'on': ['WhichKey', 'WhichKey!'] } 
 Plug 'catppuccin/vim', { 'as': 'catppuccin' } " theme
@@ -125,6 +149,8 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'thomasfaingnaert/vim-lsp-snippets'
 Plug 'thomasfaingnaert/vim-lsp-ultisnips'
+Plug 'itchyny/lightline.vim' " status line
+Plug 'christoomey/vim-tmux-navigator' " tmux navigator (C-j,k,h,l)
 call plug#end()
 
 """""""""""""""
@@ -156,6 +182,7 @@ nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
 nnoremap <silent> <localleader> :<c-u>WhichKey  '\'<CR>
 " Document existing key chains
 let g:which_key_map =  {}
+let g:which_key_map.b = { 'name' : '[B]uffer' }
 let g:which_key_map.c = { 'name' : '[C]ode' }
 let g:which_key_map.d = { 'name' : '[D]ocument' }
 let g:which_key_map.r = { 'name' : '[R]ename' }
@@ -184,9 +211,13 @@ nmap <leader>s. :History<CR>
 let g:which_key_map.s['.'] = '[S]earch Recent Files ("." for repeat)'
 nmap <leader><leader> :Buffers<CR>
 let g:which_key_map[' '] = '[ ] Find existing buffers'
-
 nmap <leader>/ :BLines<CR>
 let g:which_key_map['/'] = '[/] Fuzzily search in current buffer'
+
+nmap <leader>bd :bd<CR>
+let g:which_key_map.b.d = '[B]uffer [D]delete'
+nmap <leader>e :NERDTreeToggle<CR>
+let g:which_key_map['e'] = '[e] Open NERDTree'
 
 """ lsp
 " Performance related settings, requires Vim 8.2+
