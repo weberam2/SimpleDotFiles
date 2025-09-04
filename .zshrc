@@ -62,6 +62,7 @@ alias cp='cp --interactive=once'
 
 alias bat='batcat'
 alias fd='fdfind'
+alias tmux='tmux -u'
 
 alias sz='source ~/.zshrc'
 alias q='exit'
