@@ -5,3 +5,9 @@ Sometimes I find keeping a proper `.dotfile` repo a little tedious, when all I w
 # Install
 
 Simply copy/paste the install.sh file, `chmod +x install.sh` and run it: `./install.sh`
+
+For fzf, I choose no auto-complete, yes key-bindings, no to zsh update
+
+At the end, run `zsh`. This will take some extra time and install zsh plugins.
+
+When you first run vim, you will have to run `:PlugInstall`
