@@ -67,6 +67,7 @@ ensure_cmd fzf fzf
 ensure_cmd ripgrep ripgrep
 ensure_cmd fd-find fd-find
 ensure_cmd bat bat
+ensure_cmd ranger ranger
 
 # --- clone repo ---
 if [ ! -d "$DOTFILES_DIR" ]; then
