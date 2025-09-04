@@ -66,6 +66,7 @@ alias tmux='tmux -u'
 
 alias sz='source ~/.zshrc'
 alias q='exit'
+alias c='clear'
 
 alias ..='cd ..'
 alias ...='cd ../..'
