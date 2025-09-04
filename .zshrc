@@ -38,8 +38,10 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
+alias ls='eza'
 alias ll='ls -lAh'        # long, human readable, hidden
-alias lt='ls -ltrh'       # sort by time
+alias lt='ls -lrht modified'       # sort by time
+
 alias du1='du -h --max-depth=1'   # disk usage summary
 alias dfh='df -h'                  # human-readable disk free
 alias mkdirp='mkdir -p'            # no error if exists
