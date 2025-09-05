@@ -59,7 +59,10 @@ fi
 # --- ensure dependencies ---
 ensure_cmd git git
 ensure_cmd zsh zsh
-ensure_cmd vim vim
+# ensure_cmd vim vim
+### vim alternative
+ensure_cmd vim-nox vim-nox
+
 ensure_cmd tmux tmux
 ensure_cmd curl curl
 ensure_cmd tree tree
