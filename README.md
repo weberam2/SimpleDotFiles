@@ -6,7 +6,12 @@ Sometimes I find keeping a proper `.dotfile` repo a little tedious, when all I w
 
 Simply copy/paste the install.sh file, `chmod +x install.sh` and run it: `./install.sh`
 
-OR: `wget https://raw.githubusercontent.com/weberam2/SimpleDotFiles/main/install.sh`
+## OR: 
+```
+wget https://raw.githubusercontent.com/weberam2/SimpleDotFiles/main/install.sh
+chmod +x install.sh
+./install.sh
+```
 
 ## During Install
 
