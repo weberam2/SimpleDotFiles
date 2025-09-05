@@ -69,7 +69,10 @@ ensure_cmd ripgrep ripgrep
 ensure_cmd fd-find fd-find
 ensure_cmd bat bat
 ensure_cmd ranger ranger
-ensure_cmd eza eza
+# install Rust (for macOS and Linux)
+curl https://sh.rustup.rs -sSf | sh
+. "$HOME/.cargo/env"
+cargo install eza
 
 # --- clone repo ---
 if [ ! -d "$DOTFILES_DIR" ]; then
@@ -101,6 +104,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # --- set zsh as default ---
 if command -v zsh >/dev/null && [ "$SHELL" != "$(command -v zsh)" ]; then
     echo "Changing default shell to zsh..."
+    echo "May require user password"
     chsh -s "$(command -v zsh)"
 fi
 
