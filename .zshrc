@@ -1,5 +1,10 @@
 # to change shell to zsh: chsh -s $(which zsh)
 
+# Auto start/attach to tmux:
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -119,8 +124,3 @@ export PATH="$PATH:~/.local/bin"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # fzf settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Auto start/attach to tmux:
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-  tmux attach-session -t default || tmux new-session -s default
-fi
