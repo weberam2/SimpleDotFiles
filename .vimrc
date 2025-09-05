@@ -295,6 +295,10 @@ if executable('pyls')
         \ })
 endif
 
+let g:lightline = {
+      \ 'colorscheme': 'material',
+      \ }
+
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
