@@ -29,7 +29,7 @@ set hlsearch " highlight all matches for a last used search pattern
 nnoremap <Esc> :nohlsearch<CR> 
 set showcmd " show command as you type it
 set switchbuf=uselast " which window to use when jumping to a buffer
-" set incsearch
+
 set mouse=a " enable mouselet 
 let g:UltiSnipsExpandTrigger="<tab>" " trigger snippets
 set clipboard=unnamedplus " sync with system clipboard
