@@ -119,3 +119,8 @@ export PATH="$PATH:~/.local/bin"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # fzf settings
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Auto start/attach to tmux:
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+  tmux attach-session -t default || tmux new-session -s default
+fi
