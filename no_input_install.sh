@@ -13,6 +13,7 @@ n
 y
 n
 $(echo -e '\r')
+$(echo -e '\r')
 EOF
 
 echo "Automated installation complete!"
