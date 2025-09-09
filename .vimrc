@@ -219,6 +219,8 @@ nmap <leader>bd :bd<CR>
 let g:which_key_map.b.d = '[B]uffer [D]delete'
 nmap <leader>e :NERDTreeToggle<CR>
 let g:which_key_map['e'] = '[e] Open NERDTree'
+nmap <leader>v :VsplitVifm<CR>
+let g:which_key_map['v'] = '[v] Open Vifm'
 
 """ lsp
 " Performance related settings, requires Vim 8.2+
