@@ -71,7 +71,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ensure_cmd ripgrep ripgrep
 ensure_cmd fd-find fd-find
 ensure_cmd bat bat
-ensure_cmd ranger ranger
+ensure_cmd vifm vifm
 # install Rust (for macOS and Linux)
 curl https://sh.rustup.rs -sSf | sh
 . "$HOME/.cargo/env"
