@@ -151,6 +151,7 @@ Plug 'thomasfaingnaert/vim-lsp-snippets'
 Plug 'thomasfaingnaert/vim-lsp-ultisnips'
 Plug 'itchyny/lightline.vim' " status line
 Plug 'christoomey/vim-tmux-navigator' " tmux navigator (C-j,k,h,l)
+Plug 'vifm/vifm.vim' "vifm file manager
 call plug#end()
 
 """""""""""""""
@@ -298,6 +299,10 @@ let g:lightline = {
       \ 'colorscheme': 'material',
       \ }
 
+" Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+" Vifm
+let g:vifm_embed_term=1
+let g:vifm_embed_split=1
