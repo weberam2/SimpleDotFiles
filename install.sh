@@ -4,7 +4,7 @@ set -euo pipefail
 # --- config ---
 GIT_REPO="https://github.com/weberam2/SimpleDotFiles.git"
 DOTFILES_DIR="$HOME/.dotfiles"
-FILES=(.zshrc .vimrc .tmux.conf .p10k.zsh)
+FILES=(.zshrc .vimrc .tmux.conf .p10k.zsh .config)
 
 # --- functions ---
 install_pkg() {
