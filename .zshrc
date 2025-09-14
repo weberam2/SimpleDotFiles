@@ -62,8 +62,8 @@ command -v firefox >/dev/null && export BROWSER="firefox"
 
 #### Aliases
 alias rm='rm --interactive=once'
-alias mv='mv --interactive=once'
-alias cp='cp --interactive=once'
+# alias mv='mv --interactive=once'
+# alias cp='cp --interactive=once'
 
 alias bat='batcat'
 alias fd='fdfind'
