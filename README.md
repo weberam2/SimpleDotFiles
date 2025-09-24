@@ -4,7 +4,7 @@ Sometimes I find keeping a proper `.dotfile` repo a little tedious, when all I w
 
 # To grab one file
 
-`wget ap`
+`wget https://raw.githubusercontent.com/weberam2/SimpleDotFiles/main/filename`
 
 # Install
 
