@@ -38,7 +38,8 @@ set ignorecase
 set smartcase
 
 set updatetime=250 " decrease update time
-set timeoutlen=300 " show which-key sooner
+set timeoutlen=500 " show which-key sooner
+let g:which_key_timeout = 100
 
 set splitright
 set splitbelow " configure how splits appear
